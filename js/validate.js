@@ -1,10 +1,6 @@
 const password1 = document.getElementById('password1');
 const password2 = document.getElementById('password2');
-
-window.onload = () => {
-  password1.onchange = validatePassword;
-  password2.onchange = validatePassword;
-};
+const submit = document.querySelector('#submit');
 
 const validatePassword = () => {
   const firstPasswordValue = password1.value;
@@ -60,5 +56,21 @@ const validatePassword = () => {
       error.classList.add('active');
       error.textContent = `Password must at least contain the characters: !, @, #, $, %, ^, &, or *`;
     }
+
+    const illegalCharacterGroup = firstPasswordValue.match(/[^A-z0-9\!\@\#\$\%\^\&\*]/g);
+    if (illegalCharacterGroup) {
+      illegalCharacterGroup.forEach(illegalCharacter => {
+        password1.setCustomValidity(`Illegal Character ${illegalCharacter}`);
+        password1.focus();
+        error.classList.add('active');
+        error.textContent = `Illegal Character ${illegalCharacter}`;
+      })
+    }
   }
+
+
 };
+
+submit.addEventListener('click', () => {
+  validatePassword();
+});
