@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Password Validation</title>
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="form-control-container">
+        <form>
+          <div class="form-control">
+            <label for="password">
+              <span class="form-label">Password:</span>
+              <input type="password" name="password" id="password1" required />
+            </label>
+          </div>
+          <div class="form-control">
+            <label for="password2">
+              <span class="form-label">Confirm Password:</span>
+              <input type="password" name="password" id="password2" required />
+            </label>
+          </div>
+          <div class="form-control">
+            <label for="errorMessage">
+              <p class="error"></p>
+            </label>
+          </div>
+
+          <input type="submit" value="submit" />
+        </form>
+      </div>
+    </div>
+
+    <script src="./js/validate.js"></script>
+  </body>
+</html>
