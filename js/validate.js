@@ -22,8 +22,8 @@ const validatePassword = () => {
   }
 
   if (firstPasswordValue !== "" && firstPasswordValue === secondPasswordValue) {
-    if (firstPasswordValue.length < 8) {
-      password1.setCustomValidity(`Password must contain at least eight characters`);
+    if (firstPasswordValue.length < 16) {
+      password1.setCustomValidity(`Password must contain at least 16 characters`);
       password1.focus();
       error.classList.add('active');
       error.textContent = `Password must contain at least eight characters`;
